@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@500&display=swap");
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-text-color: #183b56;
+    --secondary-text-color: #577592;
+    --accent-color: #2294ed;
+    --accent-color-dark: #1d69a3;
+
+    --line-thickness: 0.10em;
+    --glass-size: 65%;
+    --icon-height: 30px;
+    --transition-speed: 0.15s;
+    --timing-function: cubic-bezier(0.66, 1.51, 0.77, 1.13);
+    --icon-color: black;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--primary-text-color);
+}
+
+p {
+    font-family: "Roboto", sans-serif;
+    color: var(--secondary-text-color);
+    line-height: 1.4rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 95%;
+    margin-inline: auto;
+    overflow: hidden;
+}
+
+.cards-container {
+    width: 80%;
+}
+
+nav {
+    background-color: #f3faff;
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    box-shadow: -1px 13px 40px 7px rgba(0, 0, 0, 0.54);
+}
+
+.main-nav {
+    justify-content: space-between;
+    padding-block: 8px;
+}
+
+.company-logo img {
+    width: 60px;
+}
+
+.nav-links ul {
+    gap: 16px;
+}
+
+.hover-link {
+    cursor: pointer;
+}
+
+.hover-link:hover {
+    color: var(--secondary-text-color);
+}
+
+.hover-link:active {
+    color: var(--accent-color);
+}
+
+.nav-item.active {
+    color: var(--accent-color);
+}
+
+.search-bar {
+    height: 32px;
+    gap: 8px;
+}
+
+.news-input {
+    width: 200px;
+    height: 100%;
+    visibility: hidden;
+    border-radius: 4px;
+    border: 2px solid #bbd0e2;
+    font-family: "Roboto", sans-serif;
+}
+
+
+.search-button {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+}
+
+.search-button:hover {
+    background-color: var(--accent-color-dark);
+}
+
+
+main {
+    padding-block: 20px;
+    margin-top: 80px;
+}
+
+.cards-container {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 20px;
+    align-items: start;
+}
+
+.card {
+    width: 360px;
+    min-height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: #fff;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.card:hover {
+    box-shadow: 1px 1px 8px #d4ecff;
+    background-color: #f9fdff;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 10px 10px 0 0;
+}
+
+.card-header img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card-content {
+    padding: 12px;
+}
+
+.news-source {
+    margin-block: 12px;
+}
+
+
+
+.search-icon {
+    box-sizing: border-box;
+    width: var(--icon-height);
+    height: var(--icon-height);
+    max-width: 20em;
+    transition: all var(--transition-speed) linear, border-color 0s linear var(--transition-speed);
+    position: fixed;
+    /* top: 180px; */
+    /* right: 0; */
+    /* bottom: 0; */
+    /* left: 0; */
+    margin: auto;
+    border: solid var(--line-thickness);
+    border-color: rgba(255, 255, 255, 0);
+    border-radius: 100px;
+    padding: 0.25em;
+}
+
+.search-icon__wrapper {
+    width: var(--icon-height);
+    height: var(--icon-height);
+    position: absolute;
+    border-radius: 100px;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto 0;
+    transform: rotate(-45deg);
+    transition: all 0 linear;
+}
+
+.search-icon__wrapper:hover {
+    cursor: pointer;
+}
+
+.search-icon__input {
+    padding-inline: 12px;
+    background: none;
+    text-align: left;
+    outline: none;
+    display: block;
+    border: none;
+    background: rgba(255, 255, 255, 0);
+    width: calc(100% - (var(--icon-height) / 2 + 1rem));
+    margin-right: 6rem;
+    height: 100%;
+    border-radius: 100px;
+    transition: all var(--transition-speed) linear;
+    font-size: 15px;
+    padding: 0 0.5em;
+    color: black;
+}
+
+.search-icon__input::placeholder {
+    color: black;
+}
+
+.search-icon__glass {
+    width: var(--glass-size);
+    height: var(--glass-size);
+    border: solid var(--line-thickness);
+    border-color: var(--icon-color);
+    border-radius: 100px;
+    margin: 0 auto;
+    position: relative;
+    transition: all var(--transition-speed) var(--timing-function) var(--transition-speed), border-color 0s linear var(--transition-speed);
+}
+
+.search-icon__handle {
+    height: calc(100% - var(--glass-size));
+    width: var(--line-thickness);
+    margin: 0 auto;
+    background: var(--icon-color);
+    position: absolute;
+    border-radius: 0 0 100px 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all var(--transition-speed) var(--timing-function);
+    transition-delay: var(--transition-speed);
+}
+
+.search-icon__handle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--icon-color);
+    transform: rotate(0deg);
+    transition: all var(--transition-speed) var(--timing-function);
+    transition-delay: 0s;
+}
+
+.search-icon.open {
+    width: 200px;
+    border-color: transparent;
+    transition-delay: var(--transition-speed);
+}
+
+.search-icon.open .search-icon__input {
+    transition-delay: var(--transition-speed);
+}
+
+.search-icon.open .search-icon__glass {
+    width: 100%;
+    height: 100%;
+    transition: all var(--transition-speed) var(--timing-function) 0s, border-color 0s linear var(--transition-speed);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.search-icon.open .search-icon__handle {
+    bottom: calc(50% - (100% - var(--glass-size)) / 2);
+    border-radius: 100px;
+    transition-delay: 0s;
+}
+
+.search-icon.open .search-icon__handle::after {
+    transition-delay: var(--transition-speed);
+    transform: rotate(90deg);
+}
